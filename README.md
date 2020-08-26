@@ -10,4 +10,4 @@ cd Chip8-Emulator
 make
 ./chip8 <rom file name>
  ```
-The two roms included work and were found on some other repo's. Some roms don't work because of stretching and WILL cause a segfault. In the future, I'll probably fix that in the future and get the sound working in addition to that. 
+The two roms included work and were found on some other repo's. Some roms don't work because of stretching and WILL cause a segfault. In the future, I'll probably fix that and get the sound working. 
