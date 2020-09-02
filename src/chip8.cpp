@@ -5,8 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <bitset>
-//#include "chip8graphics.h"
-//
+
 
 #define SCALE 4
 
@@ -17,8 +16,6 @@ void chip8::fetch_opcode(){
   printf("OP:%x|ADDR:%x|PK:%x| " ,opcode,PC,pkop);
 
   fst_nib = memory[PC] >> 4; // first number in opcode to determine
-  //printf("%x",fist_nib);      // what to execute
-  //parsing of the opcode here
   nnn = opcode & 0x0FFF;
   x = memory[PC] & 0x0F;
   y = memory[PC+1] >> 4;
@@ -347,8 +344,8 @@ void chip8::init_graphics(){
   pixel = new bool[2048];
 
   SDL_SetRenderDrawColor( renderer, 0x00 , 0x00 , 0x00 , 0x00 );
-  for (int j = 0; j < 31; j++){
-    for (int i = 0; i < 63; i++){
+  for (int j = 0; j <= 31; j++){
+    for (int i = 0; i <= 63; i++){
       display[ convcrt(i,j)].w = SCALE;
       display[ convcrt(i,j)].h = SCALE;
       display[ convcrt(i,j)].y = j*SCALE;
